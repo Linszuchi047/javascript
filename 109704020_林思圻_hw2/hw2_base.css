@@ -1,0 +1,76 @@
+body {
+    background-color: blanchedalmond;
+}
+
+h1 {
+    color: red;
+    font-size: 4em;
+}
+
+* {
+    font-family: 'Lemon', '微軟正黑體';
+}
+
+header {
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    text-align: center;
+    list-style-type: none;
+    width: 10em;
+    padding: 0.1em 0.2em;
+    background-color: rgb(250, 205, 175);
+    color: rgb(132, 108, 68);
+    border: 2px solid;
+    border-color: #F96;
+    border-radius: 16px;
+
+}
+
+img {
+    float: left;
+}
+
+aside {
+    float: right;
+}
+
+footer {
+    float: clear;
+}
+
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-0pky {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top
+}
