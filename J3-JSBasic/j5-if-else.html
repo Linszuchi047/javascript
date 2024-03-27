@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2 align=center>if-else statement</h2>
+<hr>
+<script>
+	let x=10, y=20, max;
+	
+	if (x<y) { 
+		max=x;
+	} else {
+		max=y;
+	}
+
+	if (x<y) { max=x; } else { max=y; }
+	
+	if (x<y) max=x; else max=y;
+	
+	// nested if
+	today = new Date();	// 取得「今天」日期物件
+	day = today.getDay();	// 取得今天是星期幾
+
+	if ( day == 0 ) {
+		document.write("<p>今天是星期天耶，可以睡到12點嘍！");
+	} else if ( day == 1 ) {
+		document.write("<p>今天是星期一...GDIM (God damned it's Monday)...";
+	} else if ( day == 2 ) {
+		document.write("<p>今天是星期二或三，離週末還很遠呢！繼續工作中...");
+	} else if ( day == 3 ) {
+		document.write("<p>今天是星期二或三，離週末還很遠呢！繼續工作中...");
+	} else if ( day == 4 ) {
+		document.write("<p>今天是星期四...星期五為什麼還沒到？");
+	} else if ( day == 5 ) {
+		document.write("<p>今天是星期五喔，TGIF (Thank God it's Friday) !");
+	} else if ( day == 6 ) {
+		document.write("<p>今天星期六喔，誰要跟我去血拼？");
+	} else {
+		document.write("<p>Error!");
+	}
+	/*
+	// Example 2
+	a = prompt("請輸入您的年齡：", 30);
+	if (a<20) {
+		alert("您只有 "+a+ " 歲，年輕真好啊！"); 
+		// ...
+	} else if (a<30) {
+		alert("您只有 "+a+ " 歲，真是青年才俊啊！"); 
+		// ...
+	} else if (a<40) {
+		alert("您只有 "+a+ " 歲，真是青年才俊啊！"); 
+		// ...
+	} else {
+		alert("您年過30，想必是事業有成了！");
+	}
+	*/
+</script>
+<hr>
+</body>
+</html>

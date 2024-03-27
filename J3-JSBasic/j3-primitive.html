@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2 align=center>Primitive Types</h2>
+<hr>
+<script>
+"use strict";
+// number 
+
+// precision
+let a = 0.25;
+let b = 0.05;
+if ( (a+b) == 0.3 ) console.log("you got 0.3");
+else console.log("oh! oh!");
+
+a = 0.1;
+b = 0.2;
+if ( (a+b) == 0.3 ) console.log("you got 0.3");
+else console.log("oh! oh!");
+
+// boolean
+console.log(" 1+1==2 : " + (1+1==2)); // true
+console.log(" 1>2 : " + (1>2)); // false
+console.log(" 0 : " + Boolean(0)); // false
+console.log(" empty string : " + Boolean("")); // false
+
+// string
+
+// template literal
+let name = "John"; 
+console.log(`hello, ${name}`);
+</script>
+<hr>
+</body>
+</html>

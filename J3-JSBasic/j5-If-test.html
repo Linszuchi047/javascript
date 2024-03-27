@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body style="text-align:center;">
+<h2>判斷條件的真偽</h2>
+<hr>
+<p>請按 F12 開啟除錯工具,點選 console</p>
+<script>
+condition=0;
+console.log("Condition:0 ===> "+(condition?true:false));
+condition=5;
+console.log("Condition:5 ===> "+(condition?true:false));
+condition=-3;
+console.log("Condition:-3 ===> "+(condition?true:false));
+condition="";
+console.log("Condition:\"\" ===> "+(condition?true:false));
+condition="0";
+console.log("Condition:\"0\" ===> "+(condition?true:false));
+condition="00";
+console.log("Condition:\"00\" ===> "+(condition?true:false));
+condition="0.0";
+console.log("Condition:\"0.0\" ===> "+(condition?true:false));
+</script>
+<hr>
+</body>
+</html>

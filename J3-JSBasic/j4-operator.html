@@ -1,0 +1,69 @@
+<script>
+"use strict";
+let a=1, b=2, c=0;
+//let n = 2*(3**2);
+let n = 12/3*4;
+//let n = 2**2**3;
+console.log(typeof c); // number
+console.log(typeof typeof c); // string
+console.log(2**3**2); // 512
+
+console.log("123"+1); // = "1231", no error
+console.log("ABC"-1); // = NaN, no error
+// number testing
+// Arithmetic operators work, but bitwise/shifts only operate on 32-bit integer
+let x = 9007199254740992;
+let y = -x;
+console.log("var x = 9007199254740992;"); // 10*x + 10*y == 10
+console.log("var y = -x;<br>");
+console.log("x+1 =", (x+1)); // 9007199254740992
+console.log("x/2 : ", x/2);  // 4503599627370496
+console.log("x == x+1; ==>", x == x+1); // true !
+console.log("y == y-1; ==>", y == y-1); // also true !
+console.log("x >> 1; ==>", x>>1); // 0
+console.log("x | 1; ==>", x | 1); // 1
+//  shift testing 
+console.log( "2 >> 3 ==>", 2 >> 3);
+console.log( "2 << 3 ==>", 2 << 3); 
+console.log( "-1 >> 1 ==>", -1 >> 1); // = -1
+console.log( "-1 >>> 1 ==>", -1 >>> 1); // = 2147483647
+// interger range testing
+console.log( "1 << 30 ==> ",1 << 30); // = 1073741824
+console.log( "1 << 31 ==> ",1 << 31); // = -2147483648
+console.log( "1 << 32 ==> ",1 << 32); // = 1
+// conclusion: 
+// >> : signed bit extention
+// >>> : always filled by 0
+// interger : 32 bits, range -2147483648 ~ 2147483647
+
+// exactly match testing
+x = 5;
+console.log( x == "5"); // true
+console.log( x === "5"); // false
+console.log( '"abc" == "abcde" : ', "abc" == "abcde"); // false
+console.log( "abc" === "abcde"); // false
+console.log( "abc" === "abc"); // true
+
+x = 0;
+if (x = 0 || x == 0) console.log("x="+x); // x=true
+
+// comma operator
+c = (a=5, b=6);
+console.log(c); // 6
+c=b=a;
+console.log(c); // 5
+a=1; b=2;
+[a, b] = [b, a]
+console.log(a,b); // 2 1
+
+//------------------------
+a=1; b=2;
+//c=(a++)+(++b);
+//console.log("a=",a,",b=",b,",c=",c);
+console.log(++a);
+a=1; b=2; c=3;
+// console.log( a++ == 1 ); // true
+// console.log( a++ == 2 ); // false
+if ( a++ == 2 || b-- == 1 ) c=0;
+console.log(a,b,c); // 2,1,3
+</script>

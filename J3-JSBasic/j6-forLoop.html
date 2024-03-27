@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2 style="text-align:center;">
+由 for 迴圈來產生 5 個由小變大的  "Hello World!"
+</h2>
+<hr>
+<script>
+"use strict";
+// document.write("<xmp>");
+// 由 for 迴圈來產生 5 個由小變大的  "Hello World!"
+for (let i=1; i<=5; i++) {
+	document.writeln('Font size = ' + i + 'em ===> ');
+	document.writeln('<span style="font-size:'+i+'em;">Hello World!</span><br>');
+}
+//console.log(i); # Error
+
+// ----- rewrite the for-loop with while-loop -----
+let i=1;
+while (i<=5) {
+	document.writeln('Font size = ' + i + 'em ===> ');
+	document.writeln('<span style="font-size:'+i+'em;">Hello World!</span><br>');
+	i++;
+}
+console.log(i); // 6
+
+// document.write("</xmp>");
+</script>
+<hr>
+</body>
+</html>

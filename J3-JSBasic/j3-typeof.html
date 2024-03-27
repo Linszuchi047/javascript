@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2 style="text-align:center;">以 typeof 檢視變數的資料型態</h2>
+<hr>
+<script>
+"use strict";
+let x;
+x = "This is a string";
+document.write("typeof(x)- 字串：" + x + typeof(x)+ "<br>");
+document.write("typeof x - 字串：" + typeof x + "<br>");
+x = 100;
+document.write("typeof x - 數字：" + typeof x + "<br>");
+x = true;
+document.write("typeof x - 布林：" + typeof x + "<br>");
+function square(n){
+	return(n*n);
+}
+document.write("typeof x - 函數：" + typeof square + "<br>");
+x = new Date();
+document.write("typeof x - Date：" + typeof x + "<br>");
+x = ["Mon", "Tue", "Wed"];
+document.write("typeof x - Array：" + typeof x + "<br>");
+x = {"Mon":"英文", "Tue":"物理", "Wed":"數學"};
+document.write("typeof x - {}：" + typeof x + "<br>");
+let student = new Object();
+student.name = "秦大偉";
+student.age = "25";
+student.id = "120118101";
+document.write("typeof x - Object：" + typeof student + "<br>");
+</script>
+
+<hr>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<script>
+//console.log("Implicit If /Conditional Operator ?:");
+
+x=10; y=20; z=25;
+max =  (x>y) ? ((x>z)?x:z) : ((y>z)?y:z);
+//console.log(max);
+console.log("hello");
+
+// 取得現在時間，並用 ?: 判斷是上午或下午
+today = new Date();			// 取得"今天"日期物件
+hour = today.getHours();		// 取得時數
+minute = today.getMinutes();	// 取得分數
+second = today.getSeconds();	// 取得秒數
+prepand = (hour>=12)? "下午":"上午";// 利用?:來決定是「上午」或「下午」
+hour = (hour>=12)? hour-12:hour;	// 利用?:來改成12小時制
+//console.log("現在時間是"+prepand+hour+"點"+minute+"分"+second+"秒");
+</script>
+</body>
+</html>

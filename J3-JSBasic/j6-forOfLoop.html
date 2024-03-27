@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body style="text-align:center;">
+<hr>
+<p>請按 F12 開啟除錯工具,點選 console</p>
+<script>
+for (c in "ABCDE")
+	console.log( c );
+	
+for (c of "ABCDE")
+	console.log( c );
+
+let s = "許功蓋";
+console.log("length = ", s.length)	
+for (c of s)
+	console.log( c );
+
+
+</script>
+<hr>
+</body>
+</html>

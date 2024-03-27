@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h2 align=center>使用 for-in 迴圈來列舉 window 物件的屬性</h2>
+<hr>
+
+<script>
+// 列舉 window 物件中的所有屬性
+var s = "hello";
+let t = "world";
+for (prop in window)
+	document.write(prop + " : " + window[prop] + "<br>");
+	//document.write(`${prop}: ${window[prop]}<br>`);
+	
+// 列舉 document 物件中的所有屬性
+//for (prop in document)
+//	document.write(`${prop}: ${document[prop]}<br>`);
+</script>
+
+<hr>
+</body>
+</html>
