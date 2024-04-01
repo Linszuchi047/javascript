@@ -74,3 +74,11 @@ footer {
     text-align: left;
     vertical-align: top
 }
+
+@media screen and (max-width: 480px) {
+    li main {
+        display: block;
+    }
+
+
+}

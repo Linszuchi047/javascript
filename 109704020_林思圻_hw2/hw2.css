@@ -1,5 +1,93 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
-
 body {
-    font-family: 'Noto Sans TC', sans-serif !important;
+    background-color: blanchedalmond;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 0;
+    padding: 0;
+
+}
+
+nav {
+    margin-top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(190, 161, 110);
+
+    /* Set the width to 100% of its container */
+}
+
+nav ul.navbar {
+    font-weight: bold;
+    text-align: right;
+    padding: 0;
+    /* Reset default padding */
+    height: 100%;
+    margin-top: 0;
+    /* Ensure the ul fills the height of the nav */
+}
+
+ul.navbar li {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+
+/* Style the first list item */
+.navbar li:first-child {
+    float: left;
+    margin-top: 0px;
+    margin-left: 30px;
+}
+
+.navbar a {
+    font-size: large;
+    list-style-type: none;
+    width: 10em;
+    padding: 0.5em 0.5em;
+    background-color: rgb(250, 205, 175);
+    border: 2px solid;
+    border-color: rgba(196, 158, 139, 0.747);
+    border-radius: 16px;
+    color: rgb(132, 108, 68);
+    text-decoration: none;
+}
+
+
+li a:hover {
+    background: rgb(238, 200, 134);
+}
+
+.menu {
+    position: relative;
+}
+
+.dropdown {
+    /* background-color: #b5b2a8; */
+    padding: 1em 0;
+    position: absolute;
+    /*WITH RESPECT TO PARENT*/
+    display: none;
+    top: 35px;
+    left: -80px;
+}
+
+.dropdown li+li {
+    margin-top: -30px;
+}
+
+.dropdown li {
+    padding: 0.1em 1em;
+    width: 8em;
+    text-align: center;
+}
+
+
+.menu:hover .dropdown {
+    display: block;
+}
+
+
+
+article section img {
+    margin-left: -150px;
+    /* Adjust this value to move the images left */
 }
