@@ -6,8 +6,17 @@ body {
 
 }
 
+p {
+    font-weight: 600;
+}
+
+article {
+    font-weight: 500;
+}
+
 nav {
     margin-top: 0;
+    margin-bottom: 20px;
     width: 100%;
     height: 60px;
     background-color: rgb(190, 161, 110);
@@ -22,6 +31,7 @@ nav ul.navbar {
     /* Reset default padding */
     height: 100%;
     margin-top: 0;
+
     /* Ensure the ul fills the height of the nav */
 }
 
@@ -36,6 +46,7 @@ ul.navbar li {
     float: left;
     margin-top: 0px;
     margin-left: 30px;
+    margin-bottom: 0;
 }
 
 .navbar a {
@@ -58,6 +69,7 @@ li a:hover {
 
 .menu {
     position: relative;
+
 }
 
 .dropdown {
@@ -66,18 +78,21 @@ li a:hover {
     position: absolute;
     /*WITH RESPECT TO PARENT*/
     display: none;
-    top: 35px;
-    left: -80px;
+    top: 20px;
+    left: -95px;
+
 }
 
 .dropdown li+li {
-    margin-top: -30px;
+    margin-top: 10px;
+
 }
 
 .dropdown li {
     padding: 0.1em 1em;
-    width: 8em;
+    width: 10em;
     text-align: center;
+
 }
 
 
@@ -85,9 +100,131 @@ li a:hover {
     display: block;
 }
 
+.space {
+
+    background-color: blanchedalmond;
+    color: blanchedalmond;
+}
 
 
-article section img {
-    margin-left: -150px;
-    /* Adjust this value to move the images left */
+
+
+div#col {
+    column-count: 3;
+    column-gap: 0.5em;
+}
+
+
+div#picture {
+    height: 100px;
+
+
+}
+
+div#sidebar {
+    height: 100px;
+}
+
+div#profile {
+    height: 120px;
+    margin-left: -90px;
+
+}
+
+.club {
+    column-count: 2;
+    column-gap: 0.5em;
+
+}
+
+#intro {
+    height: 500px;
+
+}
+
+/* Media query for screen width less than 650px */
+@media screen and (max-width: 650px) {
+    body {
+        display: block;
+        /* Change body display to block */
+    }
+
+    nav {
+        text-align: center;
+        /* Center align the content */
+    }
+
+    ul.navbar {
+        display: inline-block;
+        /* Ensure the list items are displayed inline-block */
+    }
+
+    ul.navbar li {
+        display: block;
+        /* Display list items as blocks */
+        margin: 20px auto;
+        /* Center the list items horizontally */
+    }
+
+    .navbar li:first-child {
+        float: none;
+        /* Remove float from the first list item */
+        margin-left: 0;
+        /* Reset left margin */
+    }
+
+    .menu {
+        position: relative;
+
+    }
+
+    .dropdown {
+        /* background-color: #b5b2a8; */
+        padding: 1em 0;
+        position: absolute;
+        /*WITH RESPECT TO PARENT*/
+        display: none;
+        top: -10px;
+        left: 140px;
+
+    }
+
+    .dropdown li+li {
+        margin-top: 10px;
+
+    }
+
+    .dropdown li {
+        padding: 0.1em 1em;
+        width: 10em;
+        text-align: center;
+
+    }
+
+
+    .menu:hover .dropdown {
+        display: inline-block;
+    }
+
+    div#col {
+        column-count: 3;
+        column-gap: 0.5em;
+        margin-top: 250px;
+        /* Adjust this value to move the div#col down */
+    }
+
+    div#picture {
+        height: 150px;
+
+    }
+
+    div#sidebar {
+        height: 150px;
+    }
+
+    div#profile {
+        height: 150px;
+        margin-left: 40px;
+
+    }
 }

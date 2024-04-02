@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>3-columns layout</title>
-<link rel="stylesheet" type="text/css" href="layout.css">
-<style type="text/css">
-div#container {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -o-flex;
-	display: flex;
-	flex-direction: row; /* row-reverse, column, column-reverse */
-	flex-wrap: wrap; /* nowrap, wrap-reverse */
-	align-items: flex-start; /* center, flex-start, flex-end */
-	justify-content: center; /* center, flex-start, flex-end */
-}
-nav {order: 1; flex-grow: 1;}
-div#content {order: 2; flex-grow: 2;}
-div#sidebar {order: 3; flex-grow: 1;}
-</style>
+	<title>3-columns layout</title>
+	<link rel="stylesheet" type="text/css" href="layout.css">
+	<style type="text/css">
+		div#container {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -o-flex;
+			display: flex;
+			flex-direction: row;
+			/* row-reverse, column, column-reverse */
+			flex-wrap: wrap;
+			/* nowrap, wrap-reverse */
+			align-items: flex-start;
+			/* center, flex-start, flex-end */
+			justify-content: center;
+			/* center, flex-start, flex-end */
+		}
+
+		nav {
+			order: 1;
+			flex-grow: 1;
+		}
+
+		div#content {
+			order: 2;
+			flex-grow: 2;
+		}
+
+		/*flex-grow 可調大小比例*/
+		div#sidebar {
+			order: 3;
+			flex-grow: 1;
+		}
+	</style>
 </head>
+
 <body>
 	<header>
 		header
@@ -26,9 +45,9 @@ div#sidebar {order: 3; flex-grow: 1;}
 	<div id="container">
 		<nav>
 			<ul>
-			<li><a href="#">link 1</a></li>
-			<li><a href="#">link 2</a></li>
-			<li><a href="#">link 3</a></li>
+				<li><a href="#">link 1</a></li>
+				<li><a href="#">link 2</a></li>
+				<li><a href="#">link 3</a></li>
 			</ul>
 		</nav>
 		<div id="content">
@@ -44,4 +63,5 @@ div#sidebar {order: 3; flex-grow: 1;}
 		footer
 	</footer>
 </body>
+
 </html>
