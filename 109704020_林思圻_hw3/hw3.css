@@ -1,0 +1,33 @@
+* {
+    text-align: center;
+}
+
+
+
+th {
+    background-color: rgb(208, 189, 159);
+}
+
+td {
+    background-color: rgb(222, 212, 196);
+
+}
+
+.grid {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+button {
+    font-size: large;
+    background-color: rgb(208, 189, 159);
+    border-radius: 8px;
+    border-color: rgb(208, 189, 159);
+}
+
+
+/* table:nth-child(3n+1) {
+    clear: both;
+} */

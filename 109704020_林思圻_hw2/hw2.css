@@ -110,24 +110,23 @@ li a:hover {
 
 
 div#col {
-    column-count: 3;
-    column-gap: 0.5em;
+    column-count: 4;
+    column-gap: 0.2em;
 }
 
 
 div#picture {
     height: 100px;
 
-
 }
 
 div#sidebar {
-    height: 100px;
+    height: 150px;
 }
 
 div#profile {
     height: 120px;
-    margin-left: -90px;
+    margin-left: -40px;
 
 }
 
@@ -138,8 +137,31 @@ div#profile {
 }
 
 #intro {
-    height: 500px;
+    height: 235px;
 
+}
+
+#intro_2 {
+    height: 200px;
+    margin-left: 100px;
+
+}
+
+.wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.wrap .item {
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 1px 5px 5px grey;
+}
+
+footer {
+    text-align: center;
 }
 
 /* Media query for screen width less than 650px */
@@ -207,24 +229,41 @@ div#profile {
     }
 
     div#col {
-        column-count: 3;
-        column-gap: 0.5em;
+        column-count: 4;
+        column-gap: 0.8em;
         margin-top: 250px;
         /* Adjust this value to move the div#col down */
     }
 
     div#picture {
-        height: 150px;
+        height: 200px;
 
     }
 
     div#sidebar {
-        height: 150px;
+        height: 170px;
     }
 
     div#profile {
-        height: 150px;
-        margin-left: 40px;
+        height: 190px;
+        margin-left: 45px;
+
+    }
+
+    .club {
+        column-count: 2;
+        column-gap: 0.5em;
+
+    }
+
+    #intro {
+        height: 380px;
+
+    }
+
+    #intro_2 {
+        height: 200px;
+        margin-left: 80px;
 
     }
 }
