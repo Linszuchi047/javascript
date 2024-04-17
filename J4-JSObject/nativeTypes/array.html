@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2 align="center">Array Tutorial</h2>
+<script>
+"use strict";
+let myArray = new Array();				// 產生一個空的陣列
+myArray[0] = "This is a test";		// 加入第 1 個元素 
+myArray[1] = "The second element";	// 加入第 2 個元素 
+myArray[2] = "The last element";	// 加入第 3 個元素 
+
+console.log("myArray[0] = " + myArray[0]);
+console.log("myArray[1] = " + myArray[1]);
+console.log("myArray[2] = " + myArray[2]);
+
+//myArray=new Array("Mon", "Tue", "Wed");
+myArray=["Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"];
+
+// 控制台/地區與語言選項/地區選項/自訂/清單分隔字元
+// 2012.11.6 - IE: support, Chrome,Firefox: no 
+console.log("myArray.toLocaleString() = " + myArray.toLocaleString());
+
+// The valueOf() method returns the array.
+console.log("myArray.valueOf() = " + myArray.valueOf());
+console.log((myArray.valueOf())[0]); // Mon
+
+console.log(typeof myArray); // object
+console.log(myArray instanceof Array); // returns true
+</script>
+</h3>
+<hr>
+</body>
+</html>

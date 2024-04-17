@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+h2 { text-align: center; }
+table {
+	margin: auto;
+}
+table,th,td {
+	border: 1px solid gray;
+}
+.ccc {text-align: center;}
+.lll {text-align: right; }
+
+</style>
+</head>
+<body>
+<h2>0~15 不同基底的表示方式</h2>
+<hr>
+<table>
+<tr><th>十進位</th><th>二進位</th><th>八進位</th><th>十六進位</th>
+<script>
+let out = '';
+for (let x=0; x<16; x++) {
+	out += `<tr>
+	<td class="ccc" style="text-align:center;">${x.toString()}
+	<td class="lll">${x.toString(2)}
+	<td class="lll">${x.toString(8)}
+	<td class="ccc">${x.toString(16).toUpperCase()}
+	</tr>`;
+}
+document.write(out);
+</script>
+</table>
+<hr>
+</body>
+</html>

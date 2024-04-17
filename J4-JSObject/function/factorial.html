@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2 align="center">以遞迴方式計算階乘</h2>
+<hr>
+<script>
+"use strict";
+function factorial(n){	// 以遞迴方式計算階乘
+	if (n<=1) return(1);		// 結束條件
+	return(n*factorial(n-1));	// 遞迴呼叫
+}
+console.log("factorial(5)="+factorial(5)); // 120
+
+let fact = factorial;
+console.log("fact(5)="+fact(5)); // 120
+factorial = null;
+//console.log("fact(5)="+fact(5)); // error
+
+const factorial = function(n){	
+	if (n==0) return(1);
+	return(n*factorial(n-1));
+}
+console.log("factorial(5) = " + factorial(5) );
+var fact=factorial;
+console.log("1st:fact(5)=" + fact(5) );
+//factorial=null; // TypeError: Assignment to constant variable.
+console.log("2nd:fact(5)=" + fact(5) );
+
+let factorial = function inside(n){
+	if (n==0) return(1);
+	return(n*inside(n-1));
+}
+var fact=factorial;
+console.log("1st:fact(5)=" + fact(5));
+factorial=null;
+console.log("2nd:fact(5)=" + fact(5));
+//console.log("inside(5)=" + inside(5)); // IE8 work, Chrome not work
+/*
+for (i=10; i<19; i++) {
+	console.log(i+"! = "+factorial(i));
+}
+function non_recursive(n) {
+	let r=1;
+	for (let i=n; i>0; i--) r*=i;
+	return r;
+}
+*/
+</script>
+<hr>
+</body>
+</html>

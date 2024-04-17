@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<script>
+let s = 'hello';
+console.log(s.toUpperCase()); //HELLO
+s.alt = s.toUpperCase();
+console.log(s.alt); // undefined
+
+let t = new String('hello'); // t is instance of wrapper type String
+t.alt = t.toUpperCase();
+console.log(t.alt); // HELLO
+
+let u = String('hello'); // let u = 'hello'; u is primitive string
+u.alt = u.toUpperCase();
+console.log(u.alt); // undefined
+
+console.log(typeof Number('0xf'));
+console.log(typeof (new Number('0xf')));
+console.log(typeof String('hello'));
+console.log(typeof (new String('hello')));
+console.log(Boolean(123));
+// 
+</script>
+<hr>
+</body>
+</html>

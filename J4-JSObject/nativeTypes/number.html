@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<script>
+console.log('true : '+true);
+console.log('Number(true) : '+Number(true));
+console.log('Number(false) : '+Number(false));
+console.log('Number(null) : '+Number(null));
+console.log('Number("011") : '+Number("011"));
+console.log('Number("0xf") : '+Number("0xf"));
+console.log('Number("string") : '+Number("string"));
+console.log('Number("") : '+Number(""));
+console.log('test Properties/Methods of Number =>');
+console.log('Number.NaN = '+Number.NaN);
+console.log('The value returned by "isNaN(NaN)" is "'+isNaN(NaN)+'"');
+console.log('The value returned by "NaN==NaN" is "'+(NaN==NaN)+'"');
+console.log('Number.MIN_VALUE = '+Number.MIN_VALUE);
+console.log('Number.MAX_VALUE = '+Number.MAX_VALUE);
+console.log('Number.NEGATIVE_INFINITY = '+Number.NEGATIVE_INFINITY);
+console.log('Number.POSITIVE_INFINITY = '+Number.POSITIVE_INFINITY);
+
+x=5.238e+6;
+console.log('x='+x+', x.toFixed(4)='+x.toFixed(4));
+x=123456789;
+console.log('x='+x+', x.toExponential(3)='+x.toExponential(3));
+x=1234.56789;
+console.log('x='+x+", x.toPrecision(5)="+x.toPrecision(5));
+
+// Big Int
+let a = 9007199254740992+1;
+console.log(a);
+let b = 9007199254740992n+1n;
+console.log(b);
+let c = BigInt('9007199254740992')+1n;
+console.log(c);
+console.log(c.valueOf());
+console.log(123n+1n);
+console.log(Number(123n)+1);
+
+
+console.log(BigInt.asIntN(64, c));
+console.log(BigInt.asIntN(32, c));
+console.log(BigInt.asIntN(32, 2147483648n));
+
+// 
+</script>
+<hr>
+</body>
+</html>

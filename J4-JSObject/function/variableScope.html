@@ -1,0 +1,94 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2 align="center">變數的有效範圍</h2>
+<hr>
+<script>
+"use strict";
+function varScope() {
+	let x=5; // local variable
+	console.log(x**2); // 25
+	y=8;
+}
+function arguScope(x,a) {
+	console.log(x); // 10
+	x=5; // local variable
+	console.log(x**2); // 25
+	a[0]=12;
+}
+
+let x = 10;	// Global Variable 全域變數
+//console.log(window.x);
+let y = 10;	// Global Variable 全域變數
+console.log("Before invoking function:");
+console.log("x=",x,",y=",y); // 10,10
+varScope();
+console.log("After invoking varScope() ... ");
+console.log("x=",x,",y=",y); // 10, 8
+let arr = [1, 2, 3, 4, 5];
+arguScope(x,arr);
+console.log("After invoking arguScope(x,arr) ... ");
+console.log("x=",x,",y=",y);
+console.log("arr=",arr); // [12,2,3,4,5]
+
+// variable i declared by var is beyond block scope 
+for (var i=0; i<10; i++) {
+	//...
+}
+console.log("after for loop with var i, i=",i); // 10
+
+// variable k declared by let is under block scope (ES6)
+for (let k=0; k<10; k++) {
+	// ...
+}
+// console.log("after for loop with let k, k=",k); // ReferenceError, k is not defined
+for (let item of ['one','two','three']) {console.log(item);}
+// console.log(item); // ReferenceError, item is not defined
+
+var a = [];
+for (var i = 0; i < 10; i++) {
+  a[i] = function () { return (i); };
+}
+console.log("var i; a[5]() = ", a[5]()); // 10
+
+for (let i = 0; i < 10; i++) {
+  a[i] = function () { return (i); };
+}
+console.log("let i; a[5]() = ", a[5]()); // 5
+
+try { // variable defined by "let" is not hoisted...
+	console.log(foo); // undefined
+	console.log(bar); // ReferenceError
+	var foo = 2;
+	let bar = 2;
+} catch(e) {
+	console.log(e.name, ":", e.message);
+}
+
+// temporal dead zone?
+let test;
+console.log(test); // undefined
+
+try { // try block.
+	console.log(tmp); // ReferenceError: Cannot access 'tmp' before initialization
+	let tmp = 456;
+} catch(e) {
+	console.log(e.name, ":", e.message);
+}
+var tmp = 123;
+try { // try block.
+	console.log(tmp); // ReferenceError, 
+					  // 既然 let 沒有 hoisted, 不懂為什麼不能用? 
+	let tmp = 456;
+} catch(e) {
+	console.log(e.name, ":", e.message);
+}
+console.log(tmp); // 123
+
+</script>
+<hr>
+</body>
+</html>

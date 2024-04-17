@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h2 style="text-align:center">陣列的性質</h2>
+<hr>
+
+<script>
+	myArray = ["資訊系", "電機系", "材料系"]; // same type
+	// myArray = ["This is a test", 3.1415926, "The last element"]; // different types
+
+	// 使用 for-in 迴圈來列舉陣列中的所有索引及其元素
+	for (prop in myArray)
+		document.write("<br>myArray[" + prop + "] = " + myArray[prop]);
+
+	for (item of myArray)
+		document.write("<br>"+item);
+		
+	var person = [];
+	person["firstname"] = "john"; // person.firstname = 'john';
+	person["lastname"] = "Doe";
+	for (prop in person)
+		document.write("<br>person[" + prop + "] = " + person[prop]);
+
+	for (prop of person) // loop 0 times
+		console.log("<br>" + prop);
+	
+	// 使用 for-in 迴圈來列舉 document 物件的屬性
+	// for (prop in document)
+	//		document.write("<br>document." + prop + " = " + document[prop]);
+
+	// myArray = ["Taiwan", "USA", "Japan"]; // same data type
+	// 利用 object 建立 associative array
+	myArray={"Taipei":"Taiwan", "San Francisco":"USA", "Tokyo":"Japan"};
+	console.log(myArray["Taipei"]);
+	listArray(myArray, "myArray");
+	listProperty(myArray, "myArray");
+	
+	// 列舉陣列
+	function listArray(array, arrayName) {
+		// for (var i=0; i<array.length; i++) {
+		for (var i in array) {
+			document.writeln('<br>'
+			+ arrayName + '[<span style="color:red">' + i + '</span>] = '
+			+ '<span style="color:green">' + array[i] + '</span>' );
+		}
+	}
+	// 列舉物件屬性
+	function listProperty(obj, objName) {
+		for (var i in obj)
+			document.writeln('<br>'
+			+ objName + '.<span style="color:red">' + i + '</span> = '
+			+ '<span style="color:green">' + obj[i]+ '</span>');
+	}
+
+	// Array.name return "Array"
+	// Array.constructor.name return "Function"
+	// xxx.name return "undefined"
+	// [,,].constructor.name return "Array"
+	// {...}.constructor.name return "Object"
+</script>
+<hr>
+</body>
+</html>

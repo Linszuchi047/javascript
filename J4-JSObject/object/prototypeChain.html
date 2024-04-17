@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prototype Chaining</title>
+<script type="text/javascript">
+					
+	function Person(name = 'Adam', age=1) {
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.getName = function(){return this.name;};
+
+	function Student(name, age, id) {
+		Person.call(this, name, age); //this.name = name;
+		this.id = id;
+	}
+	/*Student.prototype.getName = function(){return this.name;};*/
+	
+	//inherit from Person
+	Student.prototype = new Person(); // ***********************
+	//Student.prototype = Person.prototype;
+	/*Student.prototype.display = function(){
+		console.log("name:", this.name, ",id:", this.id);
+	}
+	*/
+	console.log(Person.prototype.getName());
+	console.log(Student.prototype.getName()); //Adam
+	var student1 = new Student("Eve" , 24, "9911001");
+	console.log(student1.name);
+	var student2 = new Student("Mary", 18, "9911002");
+	var student3 = new Student("John", 22, "9911003");
+	
+	console.log(student1.getName());   // "Eve"
+	console.log(student1 instanceof Student);  // true
+	console.log(student1 instanceof Person); // true
+	console.log(student1 instanceof Object); // true
+	console.log(student1 instanceof Function); // false  <-- 
+	console.log(Student instanceof Function); // true
+	
+	console.log(Student.prototype.isPrototypeOf(student1)); //true
+	console.log(Person.prototype.isPrototypeOf(student1)); //true
+	console.log(Object.prototype.isPrototypeOf(student1)); //true
+	console.log(Function.prototype.isPrototypeOf(student1)); //false  <--
+	console.log(Function.prototype.isPrototypeOf(Student)); //true
+
+	//override existing method
+	Student.prototype.getName = function (){
+		return this.id;
+	};
+	console.log(student1.getName());   // "9911001"
+	delete Student.prototype.getName;
+	console.log(student1.getName());   // "Eve"
+	delete student1.name;
+	console.log(student1.getName());   // "Adam"
+</script>
+</head>
+</html>
