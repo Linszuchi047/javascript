@@ -1,0 +1,52 @@
+<script>
+    class Shape {
+        constructor(name, sides, sideLength) {
+            this.name = name;
+            this.sides = sides;
+            this.sideLength = sideLength;
+        }
+        calcPerimeter() {
+            return this.sides * this.sideLength;
+
+        }
+    }
+
+    class Triangle extends Shape {
+        constructor(name, sideLength) {
+            super(name, 3, sideLength);
+
+        }
+        clacArea() {
+            return (3 ** 0.5 * this.sideLength ** 2) / 4
+
+
+        }
+    }
+
+    class Square extends Shape {
+        constructor(name, sideLength) {
+            super(name, 4, sideLength);
+
+        }
+        clacArea() {
+            return this.sideLength ** 2
+
+        }
+    }
+
+    let tri = new Triangle("triangle", 10);
+    console.log(tri.calcPerimeter());
+    console.log(tri.clacArea());
+
+    let square = new Square("sq", 15);
+    console.log(square.clacArea());
+</script>
+// function Shape(name, sides, sideLength){
+// this.name = name;
+// this.sides = sides;
+// this.sideLength = sideLength;
+
+// }
+// Shape.prototype.calcPerimeter = function(){
+// return this.sides * this.sideLength;
+// }

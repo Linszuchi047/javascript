@@ -6,6 +6,7 @@
 		getName() {
 			return this.name;
 		}
+		// é€™å€‹ä¸€æ¨£æ˜¯prototypeçš„getName
 	}
 	class Student extends Person {
 		constructor(name, id) {
@@ -13,16 +14,16 @@
 			this.id = id;
 		}
 		display() {
-			return "****"+super.getName()+"****"+this.id;
+			return "****" + super.getName() + "****" + this.id;
 		}
 	}
-	
+
 	var student1 = new Student("Adam", "2011001");
 	console.log(student1.getName());
 	// delete Student.prototype.getName;
 	delete Person.prototype.getName;
 	console.log(student1.getName());
-	
+
 
 	const PI = 3.1415926;
 	class Circle {
@@ -39,17 +40,17 @@
 	circle1.area();
 	circle2.area();
 
-	document.writeln(typeof Circle,"<br>"); // "function"
-	document.writeln(Circle === Circle.prototype.constructor,"<br>"); // true
-	// class ªº©Ò¦³¤èªk³£©w¸q¦b class ªº prototype ¤W­±
-	document.writeln(circle1.constructor === Circle.prototype.constructor,"<br>"); // true
-	document.writeln(circle1.area === Circle.prototype.area,"<br>");
+	document.writeln(typeof Circle, "<br>"); // "function"
+	document.writeln(Circle === Circle.prototype.constructor, "<br>"); // true
+	// class ï¿½ï¿½ï¿½Ò¦ï¿½ï¿½ï¿½kï¿½ï¿½ï¿½wï¿½qï¿½b class ï¿½ï¿½ prototype ï¿½Wï¿½ï¿½
+	document.writeln(circle1.constructor === Circle.prototype.constructor, "<br>"); // true
+	document.writeln(circle1.area === Circle.prototype.area, "<br>");
 
-	document.writeln(Circle.constructor === Circle.prototype.constructor,"<br>"); // false
-	document.writeln(Circle.constructor === Function.prototype.constructor,"<br>"); // true
-	
+	document.writeln(Circle.constructor === Circle.prototype.constructor, "<br>"); // false
+	document.writeln(Circle.constructor === Function.prototype.constructor, "<br>"); // true
+
 	// rewrite prototypeChain.html
-	
+
 	class Parent {
 		constructor() {
 			this.name = "Adam"; // Parent's name
@@ -58,7 +59,7 @@
 			return this.name;
 		}
 	}
-	class Child extends Parent {	
+	class Child extends Parent {
 		constructor() {
 			super();
 			//this.juniorName = "Joshua";
@@ -66,7 +67,7 @@
 	}
 	let inst = new Child();
 	console.log(inst.getName());   // "Adam"
-   
+
 	console.log(inst instanceof Child);  // true
 	console.log(inst instanceof Parent); // true
 	console.log(inst instanceof Object); // true
@@ -74,13 +75,13 @@
 	console.log(Child.prototype.isPrototypeOf(inst));  //true
 	console.log(Parent.prototype.isPrototypeOf(inst)); //true
 	console.log(Object.prototype.isPrototypeOf(inst)); //true
-	
+
 	//override existing method
-	Child.prototype.getName = function (){
+	Child.prototype.getName = function () {
 		return this.juniorName;
 	};
 	console.log(inst.getName());   // "Joshua"
 	delete Child.prototype.getName;
 	console.log(inst.getName());   // "Adam"
-*/
+* /
 </script>

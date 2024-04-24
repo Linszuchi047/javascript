@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>InnerHtml Example</title>
+</head>
+<body>
+    <div id="content">
+        <p>This is a <strong>paragraph</strong> with a list following it.</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+
+    <input type="button" value="Get InnerHTML" onclick='testInnerHTML()' />
+    <script type="text/javascript">
+        function testInnerHTML(){
+           var div = document.getElementById("content");
+            console.log(div.innerText); // div.textContent
+            console.log(div.innerHTML);
+        }
+    </script>
+</body>
+</html>

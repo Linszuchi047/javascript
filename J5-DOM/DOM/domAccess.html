@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>DOM Access</title>
+<style>
+</style>
+</head>
+<body>
+<ul id="purchases" name="purchases">
+	<li>Beans</li>
+	<li>Cheese</li>
+	<li>Milk</li>
+</ul>
+<div>
+	<input class="num" name="x" type="text" size="20" value="12" ><br>
+	<input class="num" name="x" type="text" size="20" value="34" ><br>
+	<input class="num" name="x" type="text" size="20" value="x3" ><br>
+</div>
+<script language="JavaScript" type="text/javascript">
+"use strict";
+//accessByTagName();
+//accessById();
+//accessByName();
+//accessByClass();
+//accessByQuery();
+
+function accessByTagName() {
+	let pList=document.getElementsByTagName("li");
+	console.log("getElementsByTagName() return an ",typeof pList); // Object
+
+	let msg="";
+	for (let i=0; i<pList.length; i++) {
+		msg += " " + pList[i].childNodes[0].nodeValue; // pList[i] == pList.item(i)
+	}
+	// for (let item of pList) { console.log(item); }
+	console.log("before changing pList[2]", msg);
+	
+	pList[2].childNodes[0].nodeValue = "Coffee";
+	
+	msg="";
+	for (let i=0; i<pList.length; i++) {
+		msg += " " + pList[i].childNodes[0].nodeValue; // pList[i] == pList.item(i)
+	}
+	console.log("after changing pList[2]", msg);
+	/*
+	msg = "";
+	for (let i in pList) { // 0, 1, 2, lenght, item(), namedItem()
+		msg += "," + i;
+	}
+	console.log("<br>enumerate pList property by 'in' operator<br>", msg);
+	*/
+}
+function accessById() {
+	let purchase = document.getElementById("purchases");
+	console.log(purchase.nodeType); // 1
+	console.log("the lists are: ");
+	console.log(purchase.childNodes[1].childNodes[0].nodeValue);
+	console.log(purchase.childNodes[3].childNodes[0].nodeValue);
+	console.log(purchase.childNodes[5].childNodes[0].nodeValue);
+}
+function accessByName() {
+	let x=document.getElementsByName("x");
+	x[2].value = parseInt(x[0].value)+parseInt(x[1].value);
+}
+function accessByClass() {
+	let x=document.getElementsByClassName("num");
+	x[2].setAttribute("value",
+		parseInt(x[0].getAttribute("value"))+
+		parseInt(x[1].getAttribute("value")));
+}
+function accessByQuery() {
+	// doucment.querySelector("li"); // by tag name
+	// doucment.querySelectorAll("li");
+	// doucment.querySelector("#purchases"); // by id
+	let x = document.querySelectorAll('input[name="x"]'); // by attribute
+	console.log(x);
+	x[2].value = parseInt(x[0].value)+parseInt(x[1].value);
+}
+</script>
+</body>
+</html>

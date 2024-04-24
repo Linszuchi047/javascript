@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+.marquee {text-indent:0; height:1.2em; overflow: hidden; text-wrap: nowrap;}
+</style>
+</head>
+<body>
+<h2>跑馬燈</h2>
+<hr>
+<marquee id="ECMA262">ECMA-262, or the ECMAScript Language Specification, defines the ECMAScript Language, or just ECMAScript.[6] ECMA-262 specifies only language syntax and the semantics of the core application programming interface (API), such as Array, Function, and globalThis, while valid implementations of JavaScript add their own functionality such as input/output and file system handling.
+</marquee>
+<hr>
+<div id="myMarquee1" class="marquee"></div>
+<hr>
+<div id="myMarquee2" class="marquee"></div>
+<script>
+"use strict";
+
+// setTimeout() Example
+
+let msg1 = document.getElementById("ECMA262").innerText;
+let marquee1 = document.getElementById("myMarquee1");
+function messageRotate(){
+	msg1 = msg1.substr(1, msg1.length-1) + msg1.substr(0, 1); // 將第一個字搬到最後面
+	marquee1.innerText = msg1;	// 設定至 <div> 標籤內文
+	setTimeout(messageRotate, 200); // 0.x 秒 rotate 一遍
+};
+messageRotate();
+
+// setInterval() Example
+
+let msg2 = document.getElementById("ECMA262").innerText;
+let marquee2 = document.getElementById("myMarquee2");
+marquee2.innerText = msg2;
+let indent = 100;
+let timer = setInterval(function() {
+	marquee2.style.textIndent = indent + 'vw';
+	indent--;
+}, 200);
+//setTimeout("clearInterval(timer)", 10000);
+//setTimeout(clearInterval, 5000, timer);
+
+</script>
+</body>
+</html>
