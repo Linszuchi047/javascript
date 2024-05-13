@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.lottery {
+    margin: 0 5px;
+    width: 100px;
+    /* Adjust the width to fit the circle */
+    height: 100px;
+    /* Same as the width for a perfect circle */
+    line-height: 100px;
+    /* Vertically center the text */
+    font-size: 50px;
+    text-align: center;
+    /* Horizontally center the text */
+    border-radius: 50%;
+    /* Make it a circle */
+    background-color: yellow;
+}
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.intro {
+    margin: 5px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.intro2 {
+    margin: 5px;
+    font-size: 25px;
+}
