@@ -1,9 +1,28 @@
 "use strict";
+// 開啟檔案說明:
+// 此次作業我使用套件VS CODE Live Server，為了順利抓取dictionary.txt的資料
+// 再麻煩老師開啟hw5-109704020.html時，按右鍵Open With Live Server
+// 若無法成功抓取，可以請老師註解掉  1. 第11行 let guess;  和 2.第38行~62行，fetch的函數
+// 並解開第12行 let guess = "APPLE"; 進行作業測試
+
+// -------------------------------------------------------------------------------------
+
+// 相關變數
+let guess;
+// let guess = "APPLE";
+let currentIndex = 0;
+let characterPrompt = true;
+let delPrompt = true;
+let win = false;
+let check = 0;
+let array = [];
+let round = 0;
+
+// 產生遊戲字母方格------------------------------------------------------------------------
+
 let html = ``;
 html += `<div class="title">Wordle Game</div>`;
 html += `<div class="container">`;
-
-
 for (let i = 0; i < 36; i++) {
     if (i != 5 && i != 11 && i != 17 && i != 23 && i != 29 && i != 35) {
         html += `
@@ -11,43 +30,38 @@ for (let i = 0; i < 36; i++) {
     `;
     }
 }
-
-
 html += `</div>`;
 document.write(html);
 
+// 抓dictionary.txt的資料------------------------------------------------------------------
 
-let currentIndex = 0;
-let characterPrompt = true;
-let delPrompt = true;
-let win = false;
-let check = 0;
-let array = [];
-let guess;
-let round = 0;
 fetch('dictionary.txt')
     .then(response => {
-        // Check if the response is successful
+        // 確認response成功與否
         if (!response.ok) {
             throw new Error('Failed to fetch the file');
         }
-        // Return the text content
+        //回傳
         return response.text();
     })
     .then(data => {
         const words = data.split('\n');
         const random = Math.floor(Math.random() * 5757)
         const get = words[random];
+        // 轉成大寫
         const uppercaseGuess = get.toUpperCase();
-        guess = uppercaseGuess.trim(); // Remove leading and trailing whitespace
+        guess = uppercaseGuess.trim();
 
-        document.getElementById('answer').textContent = guess;
+
+        document.getElementById('answer_1').innerHTML = guess;
+        document.getElementById('answer_2').innerHTML = guess;
+        // document.getElementById('answer').innerHTML = guess;
     })
     .catch(error => {
         console.error('Error:', error);
     });
 
-
+// 當按下鍵盤字母，顯示在上方輸入框----------------------------------------------------------
 
 function myfunction(letter) {
     delPrompt = true;
@@ -68,6 +82,8 @@ function myfunction(letter) {
 
 }
 
+// 刪除建功能-------------------------------------------------------------------------------
+
 function removeLast() {
     if (delPrompt && currentIndex > round * 5 + round) {
         array.pop();
@@ -79,15 +95,17 @@ function removeLast() {
     else {
         alert("Please start New round!");
     }
-
-
 }
 
+// Enter建功能-------------------------------------------------------------------------------
+
 function Enter() {
+    check = 0
 
     if (currentIndex === 5 || currentIndex === 11 || currentIndex === 17 ||
         currentIndex === 23 || currentIndex === 29 || currentIndex === 35) {
         for (let i = 0; i < 5; i++) {
+            // 位置與字母都對
             if (guess[i] === array[i]) {
 
                 let change = document.getElementById(`letter${currentIndex - 5 + i}`);
@@ -101,6 +119,7 @@ function Enter() {
                 }
             }
             else {
+                // 位置不對，字母對
                 if (guess.includes(array[i])) {
                     let change = document.getElementById(`letter${currentIndex - 5 + i}`);
                     change.style.backgroundColor = 'yellow';
@@ -109,6 +128,7 @@ function Enter() {
 
                 }
                 else {
+                    // 沒有出現的字母
                     let change = document.getElementById(`letter${currentIndex - 5 + i}`);
                     change.style.backgroundColor = 'gray';
                     let change_key = document.getElementById(`${array[i]}`);
@@ -131,20 +151,28 @@ function Enter() {
         }
 
     }
-    if (currentIndex === 35 && !win) {
+    if (currentIndex > 35 && !win) {
         loseModal();
     }
 
 }
+
+// 贏家彈出視窗-------------------------------------------------------------------------------
+
 function winModal() {
     var modal = document.getElementById("winModal");
     modal.style.display = "block";
 }
 
+// 輸家彈出視窗-------------------------------------------------------------------------------
+
 function loseModal() {
     var modal = document.getElementById("loseModal");
     modal.style.display = "block";
 }
+
+// 重新開始-------------------------------------------------------------------------------
+
 function reStart() {
     location.reload();
 }

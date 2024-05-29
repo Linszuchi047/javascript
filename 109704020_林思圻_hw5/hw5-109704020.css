@@ -56,6 +56,12 @@
     background-color: rgb(217, 208, 189);
 }
 
+
+.key:hover {
+    background-color: rgb(198, 188, 166);
+}
+
+
 .modal {
     display: none;
     position: fixed;
@@ -76,4 +82,8 @@
     border: 1px solid #888;
     width: 30%;
     text-align: center;
+}
+
+#answer {
+    margin-top: -7%;
 }

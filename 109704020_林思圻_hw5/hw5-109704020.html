@@ -5,30 +5,19 @@
     <!-- 編碼 -->
     <meta charset="utf-8">
     <title>homework 5</title>
-    <!-- 網頁標籤 -->
-    <!-- <link rel="icon" type="image/x-icon" href="047.ico"> -->
     <link rel="stylesheet" type="text/css" href="hw5-109704020.css">
     <script src="hw5-109704020.js"></script>
-
-    <!-- <script>
-        function write() {
-            var x = 'ya'
-            document.getElementById("letter0").innerHTML = x;
-        }
-        function myfunction(letter) {
-            document.getElementById("letter0").innerHTML = letter;
-        }
-
-    </script> -->
 
 </head>
 
 <body>
-
-
+    <!-- 打字鍵盤 -->
     <br>
     <div class="keyboard_col1">
-        <div id="answer"></div>
+
+        <!-- 如果想知道答案，可解開註解 -->
+        <!-- <div id="answer"></div> -->
+
         <button class="key" id="Q" onclick="myfunction('Q')">Q</button>
         <button class="key" id="W" onclick="myfunction('W')">W</button>
         <button class="key" id="E" onclick="myfunction('E')">E</button>
@@ -71,17 +60,20 @@
 
 
 </body>
+<!-- 贏家彈出視窗 -->
 <div id="winModal" class="modal">
     <div class="modal-content">
         <p>You win!</p>
+        <div id="answer_1"></div>
         <button class="key" onclick="reStart()">PLAY AGAIN</button>
     </div>
 
 </div>
-
+<!-- 輸家彈出視窗 -->
 <div id="loseModal" class="modal">
     <div class="modal-content">
         <p>You lose!</p>
+        <div id="answer_2"></div>
         <button class="key" onclick="reStart()">PLAY AGAIN</button>
     </div>
 
