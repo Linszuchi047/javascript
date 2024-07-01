@@ -8,22 +8,23 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="index.js" defer></script>
     <script src="collisions.js" defer></script>
-    <style>
-        #coin {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 24px;
-            font-weight: bold;
-            color: aliceblue;
-        }
-    </style>
+
 
 </head>
 
 <body>
     <canvas id="myCanvas" width="1400" height="576"></canvas>
     <div id="coin">Score: 0</div>
+    <div id="time">30</div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="gameOver">Game Over</div>
+            <div id="finalScore">Final Score: 0</div>
+            <button id="restartButton" onclick="reStart()">Restart</button>
+        </div>
+    </div>
 
 </body>
 
